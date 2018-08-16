@@ -7,9 +7,14 @@
 //
 
 #include <iostream>
+#include <QApplication>
+#include <QPushButton>
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!!!!\n";
-    return 0;
+int main(int argc, char *argv[]) {
+    QApplication app(argc, argv);
+    QPushButton button;
+    button.setText("My text");
+    button.setToolTip("A tooltip");
+    button.show();
+    return app.exec();
 }
