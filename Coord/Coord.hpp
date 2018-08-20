@@ -14,12 +14,11 @@
 class Coord{
 public:
     int x, y;
-    Coord();
+    Coord(){}
     Coord(int pX, int pY){
         this->x = pX;
         this->y = pY;
     };
-    ~Coord();
     void setCoord(int pX, int pY);
     
 private:

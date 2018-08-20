@@ -11,3 +11,7 @@ void Coord::setCoord(int pX, int pY){
     this->x = pX;
     this->y = pY;
 }
+
+std::string Coord::toString(){
+    return "(" + std::to_string(this->x) + ", " + std::to_string(this->y) +")";
+}

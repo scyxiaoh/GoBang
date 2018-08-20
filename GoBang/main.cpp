@@ -9,12 +9,12 @@
 #include <iostream>
 #include <QApplication>
 #include <QPushButton>
+#include "MainWindow.hpp"
 
 int main(int argc, char *argv[]) {
     QApplication app(argc, argv);
-    QPushButton button;
-    button.setText("My text");
-    button.setToolTip("A tooltip");
-    button.show();
+
+    MainWindow window;
+    window.show();
     return app.exec();
 }
