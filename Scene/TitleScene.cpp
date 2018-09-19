@@ -10,7 +10,7 @@
 #include <QPushButton>
 
 
-TitleScene::TitleScene() {
+TitleScene::TitleScene(MainWindow *mW) {
     setSceneRect(0,0,800,600);
     QImage bgImage(":images/titleBackGround.jpg");
     setBackgroundBrush(QBrush(bgImage.scaled(800,600,Qt::IgnoreAspectRatio)));
@@ -27,10 +27,24 @@ TitleScene::TitleScene() {
     playPVPButton->setGeometry(100,300,200,45);
     settingButton->setGeometry(100,350,200,45);
     exitButton->setGeometry(100,400,200,45);
-
+    
+    QObject::connect(playPVEButton, SIGNAL(clicked()), mW, SLOT(startGame()), Qt::QueuedConnection);
+    QObject::connect(playPVPButton, SIGNAL(clicked()), mW, SLOT(startGame()), Qt::QueuedConnection);
+    QObject::connect(exitButton, SIGNAL(clicked()), mW, SLOT(close()));
+    
     this->addWidget(playPVEButton);
     this->addWidget(playPVPButton);
     this->addWidget(settingButton);
     this->addWidget(exitButton);
 
 }
+
+TitleScene::~TitleScene() { 
+    delete playPVEButton;
+    delete playPVPButton;
+    delete settingButton;
+    delete exitButton;
+}
+
+
+

@@ -11,15 +11,18 @@
 #include <QGraphicsScene>
 #include <stdio.h>
 #include <QPushButton>
+#include "GoBang/MainWindow.hpp"
 
 class TitleScene : public QGraphicsScene {
     
 public:
     QPushButton *exitButton;
-    TitleScene();
+    QPushButton *playPVEButton;
+    TitleScene(MainWindow *mW);
+    ~TitleScene();
 
 private:
-    QPushButton *playPVEButton;
+
     QPushButton *playPVPButton;
     QPushButton *settingButton;
 };

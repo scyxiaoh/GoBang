@@ -5,11 +5,11 @@
 //  Created by Kevin Sun on 2018/8/12.
 //
 
-#include "GoBangBoard.hpp"
+#include "GoBangState.hpp"
 
-int GoBangBoard::size;
+int GoBangState::size;
 
-GoBangBoard::GoBangBoard(const int pSize){
+GoBangState::GoBangState(const int pSize){
     this->size = pSize;
     //initialize the coord array
     this->coords = new Coord [size * size];
@@ -21,10 +21,10 @@ GoBangBoard::GoBangBoard(const int pSize){
     }
 }
 
-GoBangBoard::~GoBangBoard(){
+GoBangState::~GoBangState(){
     delete [] this->coords;
 }
 
-Coord GoBangBoard::get(int x, int y){
+Coord GoBangState::get(int x, int y){
     return this->coords[x*this->size + y];
 }

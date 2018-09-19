@@ -12,15 +12,18 @@
 #include <QGraphicsView>
 
 class MainWindow : public QMainWindow {
-    
+    Q_OBJECT
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
     void setScene(QGraphicsScene *scene);
-
+public slots:
+    void startGame();
+    
 private:
     QGraphicsView *view;
-    QGraphicsScene *currentScene;
+    std::unique_ptr<QGraphicsScene> currentScene;
+
 };
 
 #endif /* MainWindow_hpp */

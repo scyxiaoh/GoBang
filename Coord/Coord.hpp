@@ -13,12 +13,16 @@
 
 class Coord{
 public:
-    int x, y;
-    Coord(){}
-    Coord(int pX, int pY){
-        this->x = pX;
-        this->y = pY;
+    enum Piece{
+        BLACK,
+        WHITE,
+        EMPTY
     };
+    
+    int x, y;
+    Piece piece;
+    Coord(){};
+    Coord(int pX, int pY);
     void setCoord(int pX, int pY);
     
 private:

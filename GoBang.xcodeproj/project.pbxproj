@@ -31,15 +31,45 @@
 					);
 			};
 		};
-		9324564AB021039178A2FB90 = {
+		AB548EB919F3BF838055BC89 = {
 			isa = PBXFileReference;
-			path = "/Users/kevinsun/git/GoBang/GoBang/GoBang/GoBangBoard.cpp";
-			name = "GoBangBoard.cpp";
+			path = "/Users/kevinsun/git/GoBang/GoBang/GoBang/GoBangMove.cpp";
+			name = "GoBangMove.cpp";
 			sourceTree = "<absolute>";
 			lastKnownFileType = "sourcecode.cpp.cpp";
 		};
-		775E582B1D2222E9761AFCC0 = {
-			fileRef = "9324564AB021039178A2FB90";
+		D207A4B16C7C6C2DF7E6CDC9 = {
+			fileRef = "AB548EB919F3BF838055BC89";
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+					);
+			};
+		};
+		A7F92F7F5BDD47507CCE3BDD = {
+			isa = PBXFileReference;
+			path = "/Users/kevinsun/git/GoBang/GoBang/GoBang/GoBangPlayer.cpp";
+			name = "GoBangPlayer.cpp";
+			sourceTree = "<absolute>";
+			lastKnownFileType = "sourcecode.cpp.cpp";
+		};
+		DA37AD158268301C08CF68F6 = {
+			fileRef = "A7F92F7F5BDD47507CCE3BDD";
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+					);
+			};
+		};
+		A8CE8E49707FB277C0191B7B = {
+			isa = PBXFileReference;
+			path = "/Users/kevinsun/git/GoBang/GoBang/GoBang/GoBangState.cpp";
+			name = "GoBangState.cpp";
+			sourceTree = "<absolute>";
+			lastKnownFileType = "sourcecode.cpp.cpp";
+		};
+		1115138F952686F12123ABA6 = {
+			fileRef = "A8CE8E49707FB277C0191B7B";
 			isa = PBXBuildFile;
 			settings = {
 				ATTRIBUTES = (
@@ -76,6 +106,21 @@
 					);
 			};
 		};
+		FF515AC694D671EFD2B439AA = {
+			isa = PBXFileReference;
+			path = "/Users/kevinsun/git/GoBang/GoBang/Scene/GameScene.cpp";
+			name = "GameScene.cpp";
+			sourceTree = "<absolute>";
+			lastKnownFileType = "sourcecode.cpp.cpp";
+		};
+		6D12152FD0F193CD26FB5365 = {
+			fileRef = "FF515AC694D671EFD2B439AA";
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+					);
+			};
+		};
 		84312F1D7A70A64FB9AEFDAB = {
 			isa = PBXFileReference;
 			path = "/Users/kevinsun/git/GoBang/GoBang/Scene/TitleScene.cpp";
@@ -106,6 +151,21 @@
 					);
 			};
 		};
+		FA15F3E3B23B0596EF4C85D5 = {
+			isa = PBXFileReference;
+			path = "/Users/kevinsun/git/GoBang/GoBang/moc_MainWindow.cpp";
+			name = "moc_MainWindow.cpp";
+			sourceTree = "<absolute>";
+			lastKnownFileType = "sourcecode.cpp.cpp";
+		};
+		F575F92186D40B8DAAEAAAA2 = {
+			fileRef = "FA15F3E3B23B0596EF4C85D5";
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+					);
+			};
+		};
 		40EFF728B87501E8EDB8BBF8 = {
 			isa = PBXFileReference;
 			path = "/Users/kevinsun/git/GoBang/GoBang/Coord/Coord.hpp";
@@ -113,10 +173,24 @@
 			sourceTree = "<absolute>";
 			lastKnownFileType = "sourcecode.c.h";
 		};
-		A3F6D141D4EDFEF80474AB2D = {
+		7566E6A16AB92D6852C8B3C8 = {
 			isa = PBXFileReference;
-			path = "/Users/kevinsun/git/GoBang/GoBang/GoBang/GoBangBoard.hpp";
-			name = "GoBangBoard.hpp";
+			path = "/Users/kevinsun/git/GoBang/GoBang/GoBang/GoBangMove.hpp";
+			name = "GoBangMove.hpp";
+			sourceTree = "<absolute>";
+			lastKnownFileType = "sourcecode.c.h";
+		};
+		52139219F10477807E77359C = {
+			isa = PBXFileReference;
+			path = "/Users/kevinsun/git/GoBang/GoBang/GoBang/GoBangPlayer.hpp";
+			name = "GoBangPlayer.hpp";
+			sourceTree = "<absolute>";
+			lastKnownFileType = "sourcecode.c.h";
+		};
+		6CA36893B75F4D7F3B274FA9 = {
+			isa = PBXFileReference;
+			path = "/Users/kevinsun/git/GoBang/GoBang/GoBang/GoBangState.hpp";
+			name = "GoBangState.hpp";
 			sourceTree = "<absolute>";
 			lastKnownFileType = "sourcecode.c.h";
 		};
@@ -124,6 +198,13 @@
 			isa = PBXFileReference;
 			path = "/Users/kevinsun/git/GoBang/GoBang/GoBang/MainWindow.hpp";
 			name = "MainWindow.hpp";
+			sourceTree = "<absolute>";
+			lastKnownFileType = "sourcecode.c.h";
+		};
+		D67620CF4A74A1265F192E46 = {
+			isa = PBXFileReference;
+			path = "/Users/kevinsun/git/GoBang/GoBang/Scene/GameScene.hpp";
+			name = "GameScene.hpp";
 			sourceTree = "<absolute>";
 			lastKnownFileType = "sourcecode.c.h";
 		};
@@ -172,7 +253,8 @@
 		25B08E2869634E9BCBA333A2 = {
 			isa = PBXGroup;
 			children = (
-				"03CCF4EC1907F7248D76012E");
+				"03CCF4EC1907F7248D76012E",
+				"FA15F3E3B23B0596EF4C85D5");
 			name = "Generated Sources";
 			sourceTree = "<group>";
 		};
@@ -194,10 +276,14 @@
 		0EB654BD4CBE3966820321E1 = {
 			isa = PBXGroup;
 			children = (
-				"9324564AB021039178A2FB90",
+				"AB548EB919F3BF838055BC89",
+				"A7F92F7F5BDD47507CCE3BDD",
+				"A8CE8E49707FB277C0191B7B",
 				"541A7C110CE42E737CE1DA38",
 				"F6376BF2F5F3442B30454E3C",
-				"A3F6D141D4EDFEF80474AB2D",
+				"7566E6A16AB92D6852C8B3C8",
+				"52139219F10477807E77359C",
+				"6CA36893B75F4D7F3B274FA9",
 				"7212284AA6AA7CB1BE00AA00");
 			name = "GoBang";
 			sourceTree = "<group>";
@@ -205,7 +291,9 @@
 		37FBED855FC242FD5CBBAAAE = {
 			isa = PBXGroup;
 			children = (
+				"FF515AC694D671EFD2B439AA",
 				"84312F1D7A70A64FB9AEFDAB",
+				"D67620CF4A74A1265F192E46",
 				"4FD5B72B53A78372AAA098F8");
 			name = "Scene";
 			sourceTree = "<group>";
@@ -257,11 +345,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				"7CEBCC810D7F7E85CD560D0A",
-				"775E582B1D2222E9761AFCC0",
+				"D207A4B16C7C6C2DF7E6CDC9",
+				"DA37AD158268301C08CF68F6",
+				"1115138F952686F12123ABA6",
 				"35658A070689DE5D76C7E7B3",
 				"3DC43FC90C5A5C4626C40689",
+				"6D12152FD0F193CD26FB5365",
 				"1508FBDE10A4D2B01EEA459A",
-				"3DB6CFE872A2A21C6FF1EC0F");
+				"3DB6CFE872A2A21C6FF1EC0F",
+				"F575F92186D40B8DAAEAAAA2");
 			isa = PBXSourcesBuildPhase;
 			runOnlyForDeploymentPostprocessing = 0;
 			name = "Compile Sources";

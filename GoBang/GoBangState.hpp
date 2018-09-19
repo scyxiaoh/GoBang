@@ -11,10 +11,10 @@
 #include <stdio.h>
 #include "Coord/Coord.hpp"
 
-class GoBangBoard{
+class GoBangState{
 public:
-    GoBangBoard(const int pSize);
-    ~GoBangBoard();
+    GoBangState(const int pSize);
+    ~GoBangState();
     inline Coord get(int x, int y);
     
 private:

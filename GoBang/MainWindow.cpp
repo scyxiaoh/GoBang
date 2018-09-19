@@ -5,8 +5,10 @@
 //  Created by Kevin Sun on 2018/8/12.
 //
 
+#include <iostream>
 #include "MainWindow.hpp"
 #include "Scene/TitleScene.hpp"
+#include "Scene/GameScene.hpp"
 
 	
 MainWindow::MainWindow(QWidget *parent):
@@ -16,19 +18,23 @@ MainWindow::MainWindow(QWidget *parent):
     view = new QGraphicsView(this);
     this->setCentralWidget(view);
 
-    TitleScene *titleScene = new TitleScene();
-    QObject::connect(titleScene->exitButton, SIGNAL(clicked()),this,SLOT(close()));
-    setScene(titleScene);
+    setScene(new TitleScene(this));
+    
 }
 
 MainWindow::~MainWindow(){
-    delete currentScene;
+    currentScene.release();
     delete view;
 }
 
 void MainWindow::setScene(QGraphicsScene *scene) {
-    if (currentScene != nullptr) delete currentScene;
-    currentScene = scene;
-    view->setScene(scene);
+    currentScene.reset(scene);
+    view->setScene(currentScene.get());
 }
+
+void MainWindow::startGame() {
+    setScene(new GameScene());
+}
+
+
 

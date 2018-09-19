@@ -7,6 +7,12 @@
 
 #include "Coord.hpp"
 
+Coord::Coord(int pX, int pY){
+    this->x = pX;
+    this->y = pY;
+    piece = Piece::EMPTY;
+}
+
 void Coord::setCoord(int pX, int pY){
     this->x = pX;
     this->y = pY;
