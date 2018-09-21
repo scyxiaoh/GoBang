@@ -16,14 +16,10 @@
 class GoBangPlayer {
 public:
     std::string name;
+    int playerId;
     GoBangPlayer(std::string pName, int id);
     GoBangPlayer(int id);
     virtual GoBangMove chooseMove(GoBangState state);
-    
-protected:
-    int playerId;
-    
-private:
 };
 
 #endif /* GoBangPlayer_hpp */

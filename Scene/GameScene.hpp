@@ -10,11 +10,19 @@
 
 #include <stdio.h>
 #include <QGraphicsScene>
+#include <QGraphicsRectItem>
+#include <QGraphicsSceneMouseEvent>
+#include "Gobang/Client.hpp"
 
 class GameScene : public QGraphicsScene {
 public:
-    GameScene();
-
+    GameScene(Client *c);
+    ~GameScene();
+    
+private:
+    QGraphicsRectItem *potentialPiece;
+    Client *client;
+    void mouseMoveEvent(QGraphicsSceneMouseEvent *event);
 };
 
 #endif /* GameScene_hpp */

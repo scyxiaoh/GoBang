@@ -8,9 +8,10 @@
 #include "GameScene.hpp"
 #include <QColor>
 #include <QPainter>
+#include <iostream>
 
 
-GameScene::GameScene() { 
+GameScene::GameScene(Client *c) {
     setSceneRect(0,0,800,600);
     QImage bgImage(":images/gameBackGround.jpg");
     setBackgroundBrush(QBrush(bgImage.scaled(800,600,Qt::IgnoreAspectRatio)));
@@ -34,5 +35,34 @@ GameScene::GameScene() {
         }
     }
     
-    addEllipse(298, 298, 4, 4, QPen(Qt::black), QBrush(Qt::black));
+    //initiate Client
+    client = c;
+    this->potentialPiece = new QGraphicsRectItem(0,0,32,32);
+    if (c->getlocalPlayerId() == 0){
+        QImage pieceImage(":images/blackPiece.png");
+        this->potentialPiece->setBrush(QBrush(pieceImage.scaled(32, 32,Qt::IgnoreAspectRatio)));
+        this->potentialPiece->setPen(QColor(0,0,0,0));
+    }
+    else {
+        QImage pieceImage(":images/whitePiece.png");
+        this->potentialPiece->setBrush(QBrush(pieceImage.scaled(32, 32,Qt::IgnoreAspectRatio)));
+        this->potentialPiece->setPen(QColor(0,0,0,0));
+    }
+    addItem(potentialPiece);
 }
+
+GameScene::~GameScene() { 
+    delete potentialPiece;
+}
+
+void GameScene::mouseMoveEvent(QGraphicsSceneMouseEvent *event){
+    //if (!client->userMoveNeeded) return;
+    qreal x = event->scenePos().x();
+    qreal y = event->scenePos().y();
+    if (x>=64 && x <= 536 && y>= 64 && y <= 536) {
+        int xC = ((int)x - 64) / 32;
+        int yC = ((int)y - 64) / 32;
+        potentialPiece->setPos((qreal) xC * 32 + 60, (qreal) yC * 32 + 60);
+    }
+}
+

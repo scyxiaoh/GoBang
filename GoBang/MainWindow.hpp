@@ -10,6 +10,7 @@
 #include <QMainWindow>
 #include <stdio.h>
 #include <QGraphicsView>
+#include "GoBangPlayer.hpp"
 
 class MainWindow : public QMainWindow {
     Q_OBJECT

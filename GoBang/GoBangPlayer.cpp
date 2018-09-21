@@ -6,3 +6,20 @@
 //
 
 #include "GoBangPlayer.hpp"
+
+
+GoBangPlayer::GoBangPlayer(std::string pName, int id) { 
+    name = pName;
+    playerId = id;
+}
+
+GoBangPlayer::GoBangPlayer(int id) { 
+    name = "Player " + std::to_string(id);
+    playerId = id;
+}
+
+GoBangMove GoBangPlayer::chooseMove(GoBangState state) { 
+    
+}
+
+
