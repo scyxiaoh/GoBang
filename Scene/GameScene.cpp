@@ -35,6 +35,8 @@ GameScene::GameScene(Client *c) {
         }
     }
     
+    //test server
+    
     //initiate Client
     client = c;
     this->potentialPiece = new QGraphicsRectItem(0,0,32,32);
@@ -62,7 +64,15 @@ void GameScene::mouseMoveEvent(QGraphicsSceneMouseEvent *event){
     if (x>=64 && x <= 536 && y>= 64 && y <= 536) {
         int xC = ((int)x - 64) / 32;
         int yC = ((int)y - 64) / 32;
-        potentialPiece->setPos((qreal) xC * 32 + 60, (qreal) yC * 32 + 60);
+        if (client->game->isValidMove(xC, yC)) {
+            potentialPiece->setPos((qreal) xC * 32 + 60, (qreal) yC * 32 + 60);
+            potentialPiece->show();
+        }
+        else potentialPiece->hide();
+
+    }
+    else {
+        potentialPiece->hide();
     }
 }
 

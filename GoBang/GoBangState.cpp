@@ -12,19 +12,16 @@ int GoBangState::size;
 GoBangState::GoBangState(const int pSize){
     this->size = pSize;
     //initialize the coord array
-    this->coords = new Coord [size * size];
-    //set x, y for each coord
+    this->coords = (Coord*) malloc(sizeof(Coord)*pSize*pSize);
+    //create coord for each x, y
     for (int i = 0; i < pSize; i++){
         for (int j=0; j < pSize; j++){
-            this->coords[i*pSize + j].setCoord(i, j);
+            coords[i*pSize + j] = *(new Coord(i,j));
         }
     }
 }
 
 GoBangState::~GoBangState(){
-    delete [] this->coords;
+    free (this->coords);
 }
 
-Coord GoBangState::get(int x, int y){
-    return this->coords[x*this->size + y];
-}

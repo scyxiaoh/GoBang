@@ -10,6 +10,8 @@
 #include <QMainWindow>
 #include <stdio.h>
 #include <QGraphicsView>
+#include <thread>
+#include <string.h>
 #include "GoBangPlayer.hpp"
 
 class MainWindow : public QMainWindow {
@@ -23,6 +25,8 @@ public slots:
     
 private:
     QGraphicsView *view;
+    std::thread serverThread;
+    std::thread clientThread;
     std::unique_ptr<QGraphicsScene> currentScene;
 
 };

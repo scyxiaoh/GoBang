@@ -21,7 +21,7 @@ public:
     
     int x, y;
     Piece piece;
-    Coord(){};
+    Coord();
     Coord(int pX, int pY);
     void setCoord(int pX, int pY);
     

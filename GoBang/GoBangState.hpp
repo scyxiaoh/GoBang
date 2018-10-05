@@ -15,7 +15,9 @@ class GoBangState{
 public:
     GoBangState(const int pSize);
     ~GoBangState();
-    inline Coord get(int x, int y);
+    inline Coord get(int x, int y){
+        return this->coords[x*this->size + y];
+    };
     
 private:
     static int size;

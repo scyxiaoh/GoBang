@@ -16,6 +16,7 @@ class GoBangGame {
 public:
     GoBangGame(GoBangPlayer *p1, GoBangPlayer *p2);
     ~GoBangGame();
+    bool isValidMove(int x, int y);
 private:
     GoBangPlayer *p1;
     GoBangPlayer *p2;
