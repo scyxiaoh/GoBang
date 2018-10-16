@@ -23,8 +23,9 @@ public:
     Piece piece;
     Coord();
     Coord(int pX, int pY);
+    Coord(Coord * toClone);
     void setCoord(int pX, int pY);
-    
+    void setOccupancy(int playerId);
 private:
     std::string toString();
 };

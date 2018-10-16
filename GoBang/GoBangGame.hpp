@@ -11,12 +11,15 @@
 #include <stdio.h>
 #include "GoBangPlayer.hpp"
 #include "GoBangState.hpp"
+#include "Scene/GameScene.hpp"
 
 class GoBangGame {
 public:
     GoBangGame(GoBangPlayer *p1, GoBangPlayer *p2);
     ~GoBangGame();
     bool isValidMove(int x, int y);
+    GameScene *guiHandler;
+    void processMove(GoBangMove m);
 private:
     GoBangPlayer *p1;
     GoBangPlayer *p2;

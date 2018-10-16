@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include <QPushButton>
 #include "GoBang/MainWindow.hpp"
+#include "GoBang/Resources.hpp"
 
 class TitleScene : public QGraphicsScene {
     

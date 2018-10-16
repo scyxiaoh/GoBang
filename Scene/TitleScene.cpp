@@ -12,8 +12,7 @@
 
 TitleScene::TitleScene(MainWindow *mW) {
     setSceneRect(0,0,800,600);
-    QImage bgImage(":images/titleBackGround.jpg");
-    setBackgroundBrush(QBrush(bgImage.scaled(800,600,Qt::IgnoreAspectRatio)));
+    setBackgroundBrush(QBrush(Resources::Image::titleBackGround().scaled(800,600,Qt::IgnoreAspectRatio)));
     QGraphicsTextItem *titleText = addText("GoBang");
     titleText->setScale(5);
     titleText->setPos(QPointF(60,100));

@@ -13,7 +13,27 @@ GoBangMove::GoBangMove(Coord *place, int player) {
     playerId = player;
 }
 
-GoBangMove::~GoBangMove() { 
-    delete end;
+/**
+ return this move result to a certain graphicsItem to be drawn
+ **/
+QGraphicsRectItem *GoBangMove::parseItem() { 
+    QImage pieceImage;
+    if (playerId == 0) {
+        pieceImage = Resources::Image::blackPiece();
+    }
+    else {
+        pieceImage = Resources::Image::whitePiece();
+    }
+    QGraphicsRectItem* rectItem = new QGraphicsRectItem(0, 0, 32, 32);
+    rectItem->setBrush(QBrush(pieceImage.scaled(32, 32)));
+    rectItem->setPen(QColor(0,0,0,0));
+    rectItem->setPos((qreal)end->x * 32 + 60, (qreal)end->y * 32 + 60);
+    return rectItem;
 }
+
+void GoBangMove::process() {
+    end->setOccupancy(playerId);
+}
+
+
 

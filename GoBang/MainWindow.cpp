@@ -33,8 +33,6 @@ MainWindow::~MainWindow(){
 void MainWindow::setScene(QGraphicsScene *scene) {
     currentScene.reset(scene);
     view->setScene(currentScene.get());
-    
-    printf("setted\n");
 }
 
 void MainWindow::startGame() {

@@ -23,14 +23,12 @@ GoBangGame::~GoBangGame() {
 }
 
 bool GoBangGame::isValidMove(int x, int y) {
-    std::cout << x << "," << y << std::endl;
-    if (state->get(x, y).piece == Coord::Piece::EMPTY) {
-        std::cout << "true" << std::endl;
-        return true;
-    }
-    else {
-        std::cout << "false" << std::endl;
-        return false;
-    }
+    return state->isValidMove(x, y);
 }
+
+void GoBangGame::processMove(GoBangMove m) {
+    state->processMove(m);
+    guiHandler->guiAddPiece(m);
+}
+
 

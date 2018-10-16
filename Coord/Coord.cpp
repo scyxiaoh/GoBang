@@ -17,6 +17,12 @@ Coord::Coord(int pX, int pY){
     piece = Piece::EMPTY;
 }
 
+Coord::Coord(Coord *toClone) {
+    this->x = toClone->x;
+    this->y = toClone->y;
+    this->piece = toClone->piece;
+}
+
 void Coord::setCoord(int pX, int pY){
     this->x = pX;
     this->y = pY;
@@ -25,3 +31,14 @@ void Coord::setCoord(int pX, int pY){
 std::string Coord::toString(){
     return "(" + std::to_string(this->x) + ", " + std::to_string(this->y) +")";
 }
+
+void Coord::setOccupancy(int playerId) { 
+    if (playerId == 0) {
+        piece = Piece::BLACK;
+    }
+    else {
+        piece = Piece::WHITE;
+    }
+}
+
+

@@ -6,6 +6,7 @@
 //
 
 #include "GameScene.hpp"
+#include "Client.hpp"
 #include <QColor>
 #include <QPainter>
 #include <iostream>
@@ -13,8 +14,7 @@
 
 GameScene::GameScene(Client *c) {
     setSceneRect(0,0,800,600);
-    QImage bgImage(":images/gameBackGround.jpg");
-    setBackgroundBrush(QBrush(bgImage.scaled(800,600,Qt::IgnoreAspectRatio)));
+    setBackgroundBrush(QBrush(Resources::Image::gameBackGround().scaled(800,600,Qt::IgnoreAspectRatio)));
     
     //draw board grid
     for (int i = 0; i < 15; i++){
@@ -34,26 +34,32 @@ GameScene::GameScene(Client *c) {
             addEllipse(76 + 3 * 32 + i * 32 * 4 - 2, 76 + 3 * 32 + j * 32 * 4 - 2, 4, 4, QPen(Qt::black), QBrush(Qt::black));
         }
     }
-    
-    //test server
-    
-    //initiate Client
+
+    //initiate Client and assign guiHandler
     client = c;
+    c->game->guiHandler = this;
+    
     this->potentialPiece = new QGraphicsRectItem(0,0,32,32);
+    QImage pieceImage;
     if (c->getlocalPlayerId() == 0){
-        QImage pieceImage(":images/blackPiece.png");
-        this->potentialPiece->setBrush(QBrush(pieceImage.scaled(32, 32,Qt::IgnoreAspectRatio)));
-        this->potentialPiece->setPen(QColor(0,0,0,0));
+        pieceImage = Resources::Image::blackPiece();
     }
     else {
-        QImage pieceImage(":images/whitePiece.png");
-        this->potentialPiece->setBrush(QBrush(pieceImage.scaled(32, 32,Qt::IgnoreAspectRatio)));
-        this->potentialPiece->setPen(QColor(0,0,0,0));
+        pieceImage = Resources::Image::whitePiece();
     }
+    this->potentialPiece->setBrush(QBrush(pieceImage.scaled(32, 32,Qt::IgnoreAspectRatio)));
+    this->potentialPiece->setPen(QColor(0,0,0,0));
+    this->potentialPiece->hide();
     addItem(potentialPiece);
+
 }
 
-GameScene::~GameScene() { 
+GameScene::~GameScene() {
+    for (std::vector<QGraphicsRectItem*>::iterator it = guiPieces.begin() ; it != guiPieces.end(); ++it){
+        delete (*it);
+    }
+    guiPieces.clear();
+    guiPieces.shrink_to_fit();
     delete potentialPiece;
 }
 
@@ -75,4 +81,10 @@ void GameScene::mouseMoveEvent(QGraphicsSceneMouseEvent *event){
         potentialPiece->hide();
     }
 }
+
+void GameScene::guiAddPiece(GoBangMove m) {
+    guiPieces.push_back(m.parseItem());
+    addItem(guiPieces.back());
+}
+
 

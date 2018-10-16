@@ -18,7 +18,7 @@ GoBangPlayer::GoBangPlayer(int id) {
     playerId = id;
 }
 
-GoBangMove GoBangPlayer::chooseMove(GoBangState state) { 
+GoBangMove* GoBangPlayer::chooseMove(GoBangState state) { 
     
 }
 

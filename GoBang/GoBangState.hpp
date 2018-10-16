@@ -10,15 +10,21 @@
 
 #include <stdio.h>
 #include "Coord/Coord.hpp"
+#include "GoBangMove.hpp"
 
 class GoBangState{
 public:
+    int longestRowWhite;
+    int longestRowBlack;
     GoBangState(const int pSize);
+    GoBangState(GoBangState *toClone);
     ~GoBangState();
-    inline Coord get(int x, int y){
-        return this->coords[x*this->size + y];
+    inline Coord *get(int x, int y){
+        return (this->coords + x*this->size + y);
     };
-    
+    bool isValidMove(int x, int y);
+    void processMove(GoBangMove m);
+    std::vector<GoBangMove*> allPossibleMoves(int playerId);
 private:
     static int size;
     Coord *coords;

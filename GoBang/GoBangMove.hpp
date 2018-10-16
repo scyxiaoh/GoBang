@@ -9,15 +9,21 @@
 #define GoBangMove_hpp
 
 #include <stdio.h>
+#include <QGraphicsRectItem>
+#include <QGraphicsScene>
 #include "Coord/Coord.hpp"
+#include "GoBang/Resources.hpp"
+
 
 class GoBangMove {
 public:
     GoBangMove(Coord *place, int player);
-    ~GoBangMove();
+    Coord *end;
+    QGraphicsRectItem* parseItem();
+    void process();
+    
 private:
     int playerId;
-    Coord *end;
 };
 
 #endif /* GoBangMove_hpp */

@@ -12,14 +12,19 @@
 #include <QGraphicsScene>
 #include <QGraphicsRectItem>
 #include <QGraphicsSceneMouseEvent>
-#include "Gobang/Client.hpp"
+#include "GoBang/Resources.hpp"
+#include "GoBang/GoBangMove.hpp"
+
+class Client;
 
 class GameScene : public QGraphicsScene {
 public:
     GameScene(Client *c);
     ~GameScene();
-    
+    void parseMove(GoBangMove move);
+    void guiAddPiece(GoBangMove m);
 private:
+    std::vector<QGraphicsRectItem*> guiPieces;
     QGraphicsRectItem *potentialPiece;
     Client *client;
     void mouseMoveEvent(QGraphicsSceneMouseEvent *event);
