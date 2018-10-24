@@ -11,8 +11,9 @@
 #include "Scene/TitleScene.hpp"
 #include "Scene/GameScene.hpp"
 #include "GoBangGame.hpp"
-#include "Client.hpp"
-#include "Server.hpp"
+#include "Socket/Client.hpp"
+#include "Socket/Server.hpp"
+#include "GoBangRandomPlayer.hpp"
 	
 MainWindow::MainWindow(QWidget *parent):
     QMainWindow(parent)
@@ -37,20 +38,28 @@ void MainWindow::setScene(QGraphicsScene *scene) {
 
 void MainWindow::startGame() {
     GoBangPlayer *p1 = new GoBangPlayer(0);
-    GoBangPlayer *p2 = new GoBangPlayer(1);
-    GoBangGame *game = new GoBangGame(p1, p2);
+    GoBangPlayer *p2 = new GoBangRandomPlayer(1);
+    GoBangGame *game1 = new GoBangGame();
+    GoBangGame *game2 = new GoBangGame();
     
     //test server
     Server *server = new Server();
+    serverThread = new SocketThread(server, this);
     
-    serverThread = server->thread();
+    Client *client1 = new Client(p1, game1);
+    Client *client2 = new Client(p2, game2);
+    clientThread[0] = new SocketThread(client1, this);
+    clientThread[1] = new SocketThread(client2, this);
+    GameScene *gScene = new GameScene(client1);
+
+    serverThread->start();
+    clientThread[0]->start();
+    clientThread[1]->start();
     
-    Client *client = new Client(p2, game);
-    clientThread = client->thread();
-    clientThread.join();
-    
-    setScene(new GameScene(client));
+    setScene(gScene);
 }
+
+
 
 
 

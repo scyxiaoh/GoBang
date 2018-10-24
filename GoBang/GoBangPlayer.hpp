@@ -19,7 +19,7 @@ public:
     int playerId;
     GoBangPlayer(std::string pName, int id);
     GoBangPlayer(int id);
-    virtual GoBangMove* chooseMove(GoBangState state);
+    virtual GoBangMove* chooseMove(GoBangState *state);
 };
 
 #endif /* GoBangPlayer_hpp */

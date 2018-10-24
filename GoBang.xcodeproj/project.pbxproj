@@ -31,6 +31,21 @@
 					);
 			};
 		};
+		A0250FB02F76C1645DB03271 = {
+			isa = PBXFileReference;
+			path = "/Users/kevinsun/git/GoBang/GoBang/GoBang/GoBangGame.cpp";
+			name = "GoBangGame.cpp";
+			sourceTree = "<absolute>";
+			lastKnownFileType = "sourcecode.cpp.cpp";
+		};
+		DD1ACFAA0360F616EEEC83E4 = {
+			fileRef = "A0250FB02F76C1645DB03271";
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+					);
+			};
+		};
 		AB548EB919F3BF838055BC89 = {
 			isa = PBXFileReference;
 			path = "/Users/kevinsun/git/GoBang/GoBang/GoBang/GoBangMove.cpp";
@@ -55,6 +70,21 @@
 		};
 		DA37AD158268301C08CF68F6 = {
 			fileRef = "A7F92F7F5BDD47507CCE3BDD";
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+					);
+			};
+		};
+		1452757B2C89E5FA81A66622 = {
+			isa = PBXFileReference;
+			path = "/Users/kevinsun/git/GoBang/GoBang/GoBang/GoBangRandomPlayer.cpp";
+			name = "GoBangRandomPlayer.cpp";
+			sourceTree = "<absolute>";
+			lastKnownFileType = "sourcecode.cpp.cpp";
+		};
+		722CF7FC9FA2C964543BE19F = {
+			fileRef = "1452757B2C89E5FA81A66622";
 			isa = PBXBuildFile;
 			settings = {
 				ATTRIBUTES = (
@@ -106,6 +136,21 @@
 					);
 			};
 		};
+		A77FCCE77BBF9D55F1FBF803 = {
+			isa = PBXFileReference;
+			path = "/Users/kevinsun/git/GoBang/GoBang/GoBang/Resources.cpp";
+			name = "Resources.cpp";
+			sourceTree = "<absolute>";
+			lastKnownFileType = "sourcecode.cpp.cpp";
+		};
+		1CE53F92CD9F4AF1062C4035 = {
+			fileRef = "A77FCCE77BBF9D55F1FBF803";
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+					);
+			};
+		};
 		FF515AC694D671EFD2B439AA = {
 			isa = PBXFileReference;
 			path = "/Users/kevinsun/git/GoBang/GoBang/Scene/GameScene.cpp";
@@ -130,6 +175,51 @@
 		};
 		1508FBDE10A4D2B01EEA459A = {
 			fileRef = "84312F1D7A70A64FB9AEFDAB";
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+					);
+			};
+		};
+		99629C77D7E8AE98AA109924 = {
+			isa = PBXFileReference;
+			path = "/Users/kevinsun/git/GoBang/GoBang/Socket/Client.cpp";
+			name = "Client.cpp";
+			sourceTree = "<absolute>";
+			lastKnownFileType = "sourcecode.cpp.cpp";
+		};
+		5BD15DE2B424A24BD78B3047 = {
+			fileRef = "99629C77D7E8AE98AA109924";
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+					);
+			};
+		};
+		1C19BF531672F4B2BEE2D6E7 = {
+			isa = PBXFileReference;
+			path = "/Users/kevinsun/git/GoBang/GoBang/Socket/Server.cpp";
+			name = "Server.cpp";
+			sourceTree = "<absolute>";
+			lastKnownFileType = "sourcecode.cpp.cpp";
+		};
+		7C5D5F435EF52E34B26B4085 = {
+			fileRef = "1C19BF531672F4B2BEE2D6E7";
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+					);
+			};
+		};
+		AE3E22C21D205C043DAFF4F2 = {
+			isa = PBXFileReference;
+			path = "/Users/kevinsun/git/GoBang/GoBang/Socket/Socket.cpp";
+			name = "Socket.cpp";
+			sourceTree = "<absolute>";
+			lastKnownFileType = "sourcecode.cpp.cpp";
+		};
+		9C38199357ADD78F8F504037 = {
+			fileRef = "AE3E22C21D205C043DAFF4F2";
 			isa = PBXBuildFile;
 			settings = {
 				ATTRIBUTES = (
@@ -166,10 +256,47 @@
 					);
 			};
 		};
+		A552060C4069A85B07C8B78B = {
+			isa = PBXFileReference;
+			path = "/Users/kevinsun/git/GoBang/GoBang/moc_GameScene.cpp";
+			name = "moc_GameScene.cpp";
+			sourceTree = "<absolute>";
+			lastKnownFileType = "sourcecode.cpp.cpp";
+		};
+		73FBCFB4F3E8653E6B45FEA3 = {
+			fileRef = "A552060C4069A85B07C8B78B";
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+					);
+			};
+		};
+		D6DD7D0DAA08124C5B791A99 = {
+			isa = PBXFileReference;
+			path = "/Users/kevinsun/git/GoBang/GoBang/moc_SocketThread.cpp";
+			name = "moc_SocketThread.cpp";
+			sourceTree = "<absolute>";
+			lastKnownFileType = "sourcecode.cpp.cpp";
+		};
+		62DEB641286E1B8AB895F8ED = {
+			fileRef = "D6DD7D0DAA08124C5B791A99";
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+					);
+			};
+		};
 		40EFF728B87501E8EDB8BBF8 = {
 			isa = PBXFileReference;
 			path = "/Users/kevinsun/git/GoBang/GoBang/Coord/Coord.hpp";
 			name = "Coord.hpp";
+			sourceTree = "<absolute>";
+			lastKnownFileType = "sourcecode.c.h";
+		};
+		67190BFEC2A79F1856EE6EBF = {
+			isa = PBXFileReference;
+			path = "/Users/kevinsun/git/GoBang/GoBang/GoBang/GoBangGame.hpp";
+			name = "GoBangGame.hpp";
 			sourceTree = "<absolute>";
 			lastKnownFileType = "sourcecode.c.h";
 		};
@@ -187,6 +314,13 @@
 			sourceTree = "<absolute>";
 			lastKnownFileType = "sourcecode.c.h";
 		};
+		C04C94C186F4027444D156F5 = {
+			isa = PBXFileReference;
+			path = "/Users/kevinsun/git/GoBang/GoBang/GoBang/GoBangRandomPlayer.hpp";
+			name = "GoBangRandomPlayer.hpp";
+			sourceTree = "<absolute>";
+			lastKnownFileType = "sourcecode.c.h";
+		};
 		6CA36893B75F4D7F3B274FA9 = {
 			isa = PBXFileReference;
 			path = "/Users/kevinsun/git/GoBang/GoBang/GoBang/GoBangState.hpp";
@@ -201,6 +335,13 @@
 			sourceTree = "<absolute>";
 			lastKnownFileType = "sourcecode.c.h";
 		};
+		F46F24EC97AF60DD5485ADDD = {
+			isa = PBXFileReference;
+			path = "/Users/kevinsun/git/GoBang/GoBang/GoBang/Resources.hpp";
+			name = "Resources.hpp";
+			sourceTree = "<absolute>";
+			lastKnownFileType = "sourcecode.c.h";
+		};
 		D67620CF4A74A1265F192E46 = {
 			isa = PBXFileReference;
 			path = "/Users/kevinsun/git/GoBang/GoBang/Scene/GameScene.hpp";
@@ -212,6 +353,34 @@
 			isa = PBXFileReference;
 			path = "/Users/kevinsun/git/GoBang/GoBang/Scene/TitleScene.hpp";
 			name = "TitleScene.hpp";
+			sourceTree = "<absolute>";
+			lastKnownFileType = "sourcecode.c.h";
+		};
+		E810269A5019B14210ACDA96 = {
+			isa = PBXFileReference;
+			path = "/Users/kevinsun/git/GoBang/GoBang/Socket/Client.hpp";
+			name = "Client.hpp";
+			sourceTree = "<absolute>";
+			lastKnownFileType = "sourcecode.c.h";
+		};
+		2189B4A27FDDFC19E95CAF93 = {
+			isa = PBXFileReference;
+			path = "/Users/kevinsun/git/GoBang/GoBang/Socket/Server.hpp";
+			name = "Server.hpp";
+			sourceTree = "<absolute>";
+			lastKnownFileType = "sourcecode.c.h";
+		};
+		10D53C27669F6ED63E718DBB = {
+			isa = PBXFileReference;
+			path = "/Users/kevinsun/git/GoBang/GoBang/Socket/Socket.hpp";
+			name = "Socket.hpp";
+			sourceTree = "<absolute>";
+			lastKnownFileType = "sourcecode.c.h";
+		};
+		844BACF3DC2DF367BEBB125E = {
+			isa = PBXFileReference;
+			path = "/Users/kevinsun/git/GoBang/GoBang/Socket/SocketThread.h";
+			name = "SocketThread.h";
 			sourceTree = "<absolute>";
 			lastKnownFileType = "sourcecode.c.h";
 		};
@@ -254,7 +423,9 @@
 			isa = PBXGroup;
 			children = (
 				"03CCF4EC1907F7248D76012E",
-				"FA15F3E3B23B0596EF4C85D5");
+				"FA15F3E3B23B0596EF4C85D5",
+				"A552060C4069A85B07C8B78B",
+				"D6DD7D0DAA08124C5B791A99");
 			name = "Generated Sources";
 			sourceTree = "<group>";
 		};
@@ -276,15 +447,21 @@
 		0EB654BD4CBE3966820321E1 = {
 			isa = PBXGroup;
 			children = (
+				"A0250FB02F76C1645DB03271",
 				"AB548EB919F3BF838055BC89",
 				"A7F92F7F5BDD47507CCE3BDD",
+				"1452757B2C89E5FA81A66622",
 				"A8CE8E49707FB277C0191B7B",
 				"541A7C110CE42E737CE1DA38",
 				"F6376BF2F5F3442B30454E3C",
+				"A77FCCE77BBF9D55F1FBF803",
+				"67190BFEC2A79F1856EE6EBF",
 				"7566E6A16AB92D6852C8B3C8",
 				"52139219F10477807E77359C",
+				"C04C94C186F4027444D156F5",
 				"6CA36893B75F4D7F3B274FA9",
-				"7212284AA6AA7CB1BE00AA00");
+				"7212284AA6AA7CB1BE00AA00",
+				"F46F24EC97AF60DD5485ADDD");
 			name = "GoBang";
 			sourceTree = "<group>";
 		};
@@ -296,6 +473,19 @@
 				"D67620CF4A74A1265F192E46",
 				"4FD5B72B53A78372AAA098F8");
 			name = "Scene";
+			sourceTree = "<group>";
+		};
+		C22D18AD283C363DFC14ABF8 = {
+			isa = PBXGroup;
+			children = (
+				"99629C77D7E8AE98AA109924",
+				"1C19BF531672F4B2BEE2D6E7",
+				"AE3E22C21D205C043DAFF4F2",
+				"E810269A5019B14210ACDA96",
+				"2189B4A27FDDFC19E95CAF93",
+				"10D53C27669F6ED63E718DBB",
+				"844BACF3DC2DF367BEBB125E");
+			name = "Socket";
 			sourceTree = "<group>";
 		};
 		8A358628E80D5169023A78CD = {
@@ -317,7 +507,8 @@
 			children = (
 				"F547EDF7CE29564357A10911",
 				"0EB654BD4CBE3966820321E1",
-				"37FBED855FC242FD5CBBAAAE");
+				"37FBED855FC242FD5CBBAAAE",
+				"C22D18AD283C363DFC14ABF8");
 			name = "Sources";
 			sourceTree = "<group>";
 		};
@@ -345,15 +536,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				"7CEBCC810D7F7E85CD560D0A",
+				"DD1ACFAA0360F616EEEC83E4",
 				"D207A4B16C7C6C2DF7E6CDC9",
 				"DA37AD158268301C08CF68F6",
+				"722CF7FC9FA2C964543BE19F",
 				"1115138F952686F12123ABA6",
 				"35658A070689DE5D76C7E7B3",
 				"3DC43FC90C5A5C4626C40689",
+				"1CE53F92CD9F4AF1062C4035",
 				"6D12152FD0F193CD26FB5365",
 				"1508FBDE10A4D2B01EEA459A",
+				"5BD15DE2B424A24BD78B3047",
+				"7C5D5F435EF52E34B26B4085",
+				"9C38199357ADD78F8F504037",
 				"3DB6CFE872A2A21C6FF1EC0F",
-				"F575F92186D40B8DAAEAAAA2");
+				"F575F92186D40B8DAAEAAAA2",
+				"73FBCFB4F3E8653E6B45FEA3",
+				"62DEB641286E1B8AB895F8ED");
 			isa = PBXSourcesBuildPhase;
 			runOnlyForDeploymentPostprocessing = 0;
 			name = "Compile Sources";
@@ -574,7 +773,7 @@
 					"../../../anaconda3/include/qt/QtCore",
 					".",
 					"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/OpenGL.framework/Headers",
-					"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/AGL.framework/Headers",
+					"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/AGL.framework/Headers/",
 					"../../../anaconda3/mkspecs/macx-clang");
 				LIBRARY_SEARCH_PATHS = (
 					"/Users/kevinsun/anaconda3/lib",
@@ -651,7 +850,7 @@
 					"../../../anaconda3/include/qt/QtCore",
 					".",
 					"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/OpenGL.framework/Headers",
-					"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/AGL.framework/Headers",
+					"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/AGL.framework/Headers/",
 					"../../../anaconda3/mkspecs/macx-clang");
 				LIBRARY_SEARCH_PATHS = (
 					"/Users/kevinsun/anaconda3/lib",

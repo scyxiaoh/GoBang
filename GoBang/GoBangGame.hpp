@@ -9,21 +9,24 @@
 #define GoBangGame_hpp
 
 #include <stdio.h>
+#include <QString>
 #include "GoBangPlayer.hpp"
 #include "GoBangState.hpp"
 #include "Scene/GameScene.hpp"
 
 class GoBangGame {
+
 public:
-    GoBangGame(GoBangPlayer *p1, GoBangPlayer *p2);
+    GoBangState *state;
+    GameScene *guiHandler;
+    
+    GoBangGame();
     ~GoBangGame();
     bool isValidMove(int x, int y);
-    GameScene *guiHandler;
     void processMove(GoBangMove m);
+    GoBangMove *parseMove(QString s);
+    
 private:
-    GoBangPlayer *p1;
-    GoBangPlayer *p2;
-    GoBangState *state;
 };
 
 #endif /* GoBangGame_hpp */

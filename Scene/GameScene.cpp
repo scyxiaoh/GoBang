@@ -6,13 +6,13 @@
 //
 
 #include "GameScene.hpp"
-#include "Client.hpp"
+#include "Socket/Client.hpp"
 #include <QColor>
 #include <QPainter>
 #include <iostream>
 
 
-GameScene::GameScene(Client *c) {
+GameScene::GameScene(Client *c, QObject *parent) : QGraphicsScene (parent) {
     setSceneRect(0,0,800,600);
     setBackgroundBrush(QBrush(Resources::Image::gameBackGround().scaled(800,600,Qt::IgnoreAspectRatio)));
     
@@ -51,7 +51,7 @@ GameScene::GameScene(Client *c) {
     this->potentialPiece->setPen(QColor(0,0,0,0));
     this->potentialPiece->hide();
     addItem(potentialPiece);
-
+    QObject::connect(this, SIGNAL(guiPiecesAdded()), this, SLOT(updateItems()));
 }
 
 GameScene::~GameScene() {
@@ -63,8 +63,13 @@ GameScene::~GameScene() {
     delete potentialPiece;
 }
 
+void GameScene::guiAddPiece(GoBangMove m) {
+    guiPieces.push_back(m.parseItem());
+    emit guiPiecesAdded();
+}
+
 void GameScene::mouseMoveEvent(QGraphicsSceneMouseEvent *event){
-    //if (!client->userMoveNeeded) return;
+    if (!client->userMoveNeeded) return;
     qreal x = event->scenePos().x();
     qreal y = event->scenePos().y();
     if (x>=64 && x <= 536 && y>= 64 && y <= 536) {
@@ -75,16 +80,31 @@ void GameScene::mouseMoveEvent(QGraphicsSceneMouseEvent *event){
             potentialPiece->show();
         }
         else potentialPiece->hide();
-
     }
     else {
         potentialPiece->hide();
     }
 }
 
-void GameScene::guiAddPiece(GoBangMove m) {
-    guiPieces.push_back(m.parseItem());
-    addItem(guiPieces.back());
+void GameScene::mouseReleaseEvent(QGraphicsSceneMouseEvent *event) { 
+    if (!client->userMoveNeeded) return;
+    qreal x = event->scenePos().x();
+    qreal y = event->scenePos().y();
+    if (x>=64 && x <= 536 && y>= 64 && y <= 536) {
+        int xC = ((int)x - 64) / 32;
+        int yC = ((int)y - 64) / 32;
+        if (client->game->isValidMove(xC, yC)) {
+            client->userMoveNeeded = false;
+            potentialPiece->hide();
+            client->playMove(new GoBangMove(client->game->state->get(xC, yC), client->player->playerId));
+        }
+    }
+}
+
+void GameScene::updateItems() { 
+    if (!items().contains(guiPieces.back())){
+        addItem(guiPieces.back());
+    }
 }
 
 

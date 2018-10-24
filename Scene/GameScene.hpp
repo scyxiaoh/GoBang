@@ -18,8 +18,9 @@
 class Client;
 
 class GameScene : public QGraphicsScene {
+    Q_OBJECT
 public:
-    GameScene(Client *c);
+    GameScene(Client *c, QObject *parent = 0);
     ~GameScene();
     void parseMove(GoBangMove move);
     void guiAddPiece(GoBangMove m);
@@ -28,6 +29,13 @@ private:
     QGraphicsRectItem *potentialPiece;
     Client *client;
     void mouseMoveEvent(QGraphicsSceneMouseEvent *event);
+    void mouseReleaseEvent(QGraphicsSceneMouseEvent *event);
+
+private slots:
+    void updateItems();
+
+signals:
+    void guiPiecesAdded();
 };
 
 #endif /* GameScene_hpp */

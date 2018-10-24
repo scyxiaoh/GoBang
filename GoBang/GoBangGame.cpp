@@ -9,16 +9,12 @@
 #include <iostream>
 
 
-GoBangGame::GoBangGame(GoBangPlayer *p1, GoBangPlayer *p2) {
-    this->p1 = p1;
-    this->p2 = p2;
+GoBangGame::GoBangGame() {
     state = new GoBangState(15);
 }
 
 
-GoBangGame::~GoBangGame() { 
-    delete p1;
-    delete p2;
+GoBangGame::~GoBangGame() {
     delete state;
 }
 
@@ -28,7 +24,17 @@ bool GoBangGame::isValidMove(int x, int y) {
 
 void GoBangGame::processMove(GoBangMove m) {
     state->processMove(m);
-    guiHandler->guiAddPiece(m);
+    if (guiHandler != nullptr)  guiHandler->guiAddPiece(m);
 }
+
+GoBangMove* GoBangGame::parseMove(QString s) {
+    QStringList components = s.split(' ');
+    if (components.size() < 3 || components.at(0).toInt() >= state->size || components.at(1).toInt() >= state->size) {
+        perror("ERROR: invalid move parsed from client.\n");
+        return nullptr;
+    }
+    return new GoBangMove(state->get(components.at(0).toInt(), components.at(1).toInt()), components.at(2).toInt());
+}
+
 
 

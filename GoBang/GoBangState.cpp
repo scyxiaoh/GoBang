@@ -148,6 +148,23 @@ std::vector<GoBangMove*> GoBangState::allPossibleMoves(int playerId) {
     return list;
 }
 
+GoBangMove *GoBangState::randomMove(int playerId) { 
+    std::vector<GoBangMove*> moves = allPossibleMoves(playerId);
+    int randomNumer = rand() % moves.size();
+    GoBangMove *toReturn = moves[randomNumer];
+    
+    //free memory of the vector
+    for (std::vector<GoBangMove*>::iterator it = moves.begin(); it != moves.end(); ++it){
+        if ((*it) != toReturn){
+            delete (*it);
+        }
+    }
+    moves.clear();
+    moves.shrink_to_fit();
+    return toReturn;
+}
+
+
 
 
 

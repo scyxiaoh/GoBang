@@ -21,7 +21,7 @@ public:
     Coord *end;
     QGraphicsRectItem* parseItem();
     void process();
-    
+    std::string toString();
 private:
     int playerId;
 };

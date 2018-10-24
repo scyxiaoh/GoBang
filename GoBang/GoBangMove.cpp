@@ -14,7 +14,7 @@ GoBangMove::GoBangMove(Coord *place, int player) {
 }
 
 /**
- return this move result to a certain graphicsItem to be drawn
+ return this move result to a certain QGraphicsItem to be drawn
  **/
 QGraphicsRectItem *GoBangMove::parseItem() { 
     QImage pieceImage;
@@ -34,6 +34,11 @@ QGraphicsRectItem *GoBangMove::parseItem() {
 void GoBangMove::process() {
     end->setOccupancy(playerId);
 }
+
+std::string GoBangMove::toString() {
+    return std::to_string(this->end->x) + " " + std::to_string(this->end->y) + " " + std::to_string(this->playerId);
+}
+
 
 
 

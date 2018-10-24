@@ -16,6 +16,6 @@ class GoBangRandomPlayer : public GoBangPlayer {
 public:
     GoBangRandomPlayer(std::string pName, int id) : GoBangPlayer(pName, id) {};
     GoBangRandomPlayer(int id) : GoBangPlayer(id) {};
-    GoBangMove* chooseMove(GoBangState state);
+    GoBangMove* chooseMove(GoBangState *state);
 };
 #endif /* GoBangRandomPlayer_hpp */

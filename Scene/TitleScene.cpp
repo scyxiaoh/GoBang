@@ -35,7 +35,6 @@ TitleScene::TitleScene(MainWindow *mW) {
     this->addWidget(playPVPButton);
     this->addWidget(settingButton);
     this->addWidget(exitButton);
-
 }
 
 TitleScene::~TitleScene() { 

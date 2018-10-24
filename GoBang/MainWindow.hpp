@@ -10,9 +10,9 @@
 #include <QMainWindow>
 #include <stdio.h>
 #include <QGraphicsView>
-#include <thread>
 #include <string.h>
 #include "GoBangPlayer.hpp"
+#include "Socket/SocketThread.h"
 
 class MainWindow : public QMainWindow {
     Q_OBJECT
@@ -25,8 +25,8 @@ public slots:
     
 private:
     QGraphicsView *view;
-    std::thread serverThread;
-    std::thread clientThread;
+    SocketThread *serverThread;
+    SocketThread *clientThread[2];
     std::unique_ptr<QGraphicsScene> currentScene;
 
 };

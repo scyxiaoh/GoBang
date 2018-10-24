@@ -14,6 +14,7 @@
 
 class GoBangState{
 public:
+    static int size;
     int longestRowWhite;
     int longestRowBlack;
     GoBangState(const int pSize);
@@ -25,8 +26,8 @@ public:
     bool isValidMove(int x, int y);
     void processMove(GoBangMove m);
     std::vector<GoBangMove*> allPossibleMoves(int playerId);
+    GoBangMove *randomMove(int playerId);
 private:
-    static int size;
     Coord *coords;
 };
 #endif /* GoBangBoard_hpp */
